@@ -1,0 +1,177 @@
+:root {
+  --color-blue: #3178c6;
+  --color-pink: #f83785;
+  --color-green: #37f85d;
+  --color-purple: #4b32c3;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #030712;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 8%;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-text {
+  text-align: center;
+}
+.header-text h1 {
+  font-size: 3rem;
+  line-height: 1rem;
+}
+
+.header .subtitle {
+  font-size: 1.5rem;
+  color: var(--color-blue);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-top: auto;
+}
+
+.main {
+  flex: 1;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 1rem;
+  margin: 0 20%;
+}
+.main-section .technologies {
+  display: grid;
+  gap: 1rem;
+  grid-column: span 1 / span 1;
+}
+
+.main-section .card {
+  display: flex;
+  background-color: #ffffff08;
+  border: 1px solid #18181b69;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 30rem;
+  max-height: 7rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease-in-out;
+}
+
+.main-section .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1rem;
+  width: 0;
+  height: 100%;
+  transition: width 0.2s ease-in-out;
+  border-radius: 0 10px 10px 0;
+}
+
+.main-section .card:nth-child(1)::after {
+  background: linear-gradient(to left, var(--color-blue), #ffffff00);
+}
+
+.main-section .card:nth-child(2)::after {
+  background: linear-gradient(to left, var(--color-pink), #ffffff00);
+}
+.main-section .card:nth-child(3)::after {
+  background: linear-gradient(to left, var(--color-purple), #ffffff00);
+}
+.main-section .card.large:nth-child(1)::after {
+  background: linear-gradient(to left, var(--color-green), #ffffff00);
+}
+
+.main-section .card:nth-child(1):hover {
+  border: 0.1rem solid var(--color-blue);
+}
+
+.main-section .card:nth-child(2):hover {
+  border: 0.1rem solid var(--color-pink);
+}
+.main-section .card:nth-child(3):hover {
+  border: 0.1rem solid var(--color-purple);
+}
+.main-section .card.large:nth-child(1):hover {
+  border: 0.1rem solid var(--color-green);
+}
+
+.main-section .card:hover::after {
+  width: 25%;
+}
+
+.main-section .card h2 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+}
+
+.main-section .card p {
+  color: #bdbdbd;
+  margin: 0;
+  font-size: 0.8rem;
+}
+.main-section .card > div {
+  display: flex;
+  flex-direction: column;
+}
+.main-section .card > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: min-content;
+}
+.main-section .card > div > div img {
+  width: 100%;
+  height: 100%;
+  max-width: 3rem;
+  max-height: 3rem;
+  fill: #03071254;
+  margin-right: 1rem;
+  transition: fill 0.4s ease-in-out;
+}
+.main-section .card:nth-child(1):hover > div > div img {
+  fill: var(--color-blue);
+}
+.main-section .card:nth-child(2):hover > div > div img {
+  fill: var(--color-pink);
+}
+.main-section .card:nth-child(3):hover > div > div img {
+  fill: var(--color-purple);
+}
+.main-section .card:nth-child(4):hover > div > div img {
+  fill: var(--color-purple);
+}
+.main-section .card.large:nth-child(1):hover > div > div img {
+  fill: var(--color-green);
+}
+.main-section .card.large {
+  grid-column: span 2;
+  height: 10rem;
+}

@@ -23,9 +23,7 @@ const nextConfig = {
     removeConsole: !isDev
   },
   images: {
-    domains: ['localhost'],
-    loader: 'default', // Carregador a ser usado
-    path: '/_next/image' // Caminho de saída para imagens
+    domains: ['localhost']
   }
 }
 
